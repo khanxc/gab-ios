@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0998A94B1F3258DA00F1DB98 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998A9491F3258DA00F1DB98 /* Recording.swift */; };
+		0998A94C1F3258DA00F1DB98 /* RecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998A94A1F3258DA00F1DB98 /* RecordingController.swift */; };
 		0998DAD91F32571600108623 /* gab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0998DACF1F32571600108623 /* gab.framework */; };
 		0998DADE1F32571600108623 /* gabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998DADD1F32571600108623 /* gabTests.swift */; };
 		0998DAE01F32571600108623 /* gab.h in Headers */ = {isa = PBXBuildFile; fileRef = 0998DAD21F32571600108623 /* gab.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0998A9491F3258DA00F1DB98 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		0998A94A1F3258DA00F1DB98 /* RecordingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
 		0998DACF1F32571600108623 /* gab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0998DAD21F32571600108623 /* gab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gab.h; sourceTree = "<group>"; };
 		0998DAD31F32571600108623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0998A94D1F3258E600F1DB98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0998A9491F3258DA00F1DB98 /* Recording.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0998A94E1F3258F000F1DB98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0998A94A1F3258DA00F1DB98 /* RecordingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		0998DAC51F32571500108623 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +91,8 @@
 		0998DAD11F32571600108623 /* gab */ = {
 			isa = PBXGroup;
 			children = (
+				0998A94D1F3258E600F1DB98 /* Model */,
+				0998A94E1F3258F000F1DB98 /* Controller */,
 				0998DAD21F32571600108623 /* gab.h */,
 				0998DAD31F32571600108623 /* Info.plist */,
 			);
@@ -148,6 +170,7 @@
 				TargetAttributes = {
 					0998DACE1F32571600108623 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 					0998DAD71F32571600108623 = {
 						CreatedOnToolsVersion = 9.0;
@@ -194,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0998A94B1F3258DA00F1DB98 /* Recording.swift in Sources */,
+				0998A94C1F3258DA00F1DB98 /* RecordingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +353,7 @@
 		0998DAE41F32571600108623 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -339,6 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appyte.gab;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -347,6 +374,7 @@
 		0998DAE51F32571600108623 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -366,6 +394,7 @@
 		0998DAE71F32571600108623 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = gabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appyte.gabTests;
@@ -378,6 +407,7 @@
 		0998DAE81F32571600108623 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = gabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appyte.gabTests;
@@ -406,6 +436,7 @@
 				0998DAE51F32571600108623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0998DAE61F32571600108623 /* Build configuration list for PBXNativeTarget "gabTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +445,7 @@
 				0998DAE81F32571600108623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
