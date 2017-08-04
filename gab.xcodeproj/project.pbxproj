@@ -12,6 +12,8 @@
 		0998DAD91F32571600108623 /* gab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0998DACF1F32571600108623 /* gab.framework */; };
 		0998DADE1F32571600108623 /* gabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998DADD1F32571600108623 /* gabTests.swift */; };
 		0998DAE01F32571600108623 /* gab.h in Headers */ = {isa = PBXBuildFile; fileRef = 0998DAD21F32571600108623 /* gab.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C7994551F3450560058160C /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7994541F3450560058160C /* Global.swift */; };
+		6C7994571F3455660058160C /* LiveTranscribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7994561F3455660058160C /* LiveTranscribeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		0998DAD81F32571600108623 /* gabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0998DADD1F32571600108623 /* gabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gabTests.swift; sourceTree = "<group>"; };
 		0998DADF1F32571600108623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C7994541F3450560058160C /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		6C7994561F3455660058160C /* LiveTranscribeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTranscribeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				0998A94A1F3258DA00F1DB98 /* RecordingController.swift */,
+				6C7994561F3455660058160C /* LiveTranscribeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		0998DAD11F32571600108623 /* gab */ = {
 			isa = PBXGroup;
 			children = (
+				6C7994531F3450340058160C /* Constants */,
 				0998A94D1F3258E600F1DB98 /* Model */,
 				0998A94E1F3258F000F1DB98 /* Controller */,
 				0998DAD21F32571600108623 /* gab.h */,
@@ -106,6 +112,14 @@
 				0998DADF1F32571600108623 /* Info.plist */,
 			);
 			path = gabTests;
+			sourceTree = "<group>";
+		};
+		6C7994531F3450340058160C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6C7994541F3450560058160C /* Global.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +233,8 @@
 			files = (
 				0998A94B1F3258DA00F1DB98 /* Recording.swift in Sources */,
 				0998A94C1F3258DA00F1DB98 /* RecordingController.swift in Sources */,
+				6C7994571F3455660058160C /* LiveTranscribeController.swift in Sources */,
+				6C7994551F3450560058160C /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,9 +12,17 @@ import Speech
 
 
 
-public protocol RecordingDelegate {
+@objc public protocol RecordingDelegate {
     
-    func  textFromAudio(_ text: String)
+     func  textFromAudio(_ text: String)
+    
+   @objc optional func unavailable_error(_ text: String)
+    
+   @objc optional func locale_error(_ text: String)
+    
+   @objc optional func transcribe_error(_ text: String)
+    
+    
     
 }
 
@@ -60,7 +68,6 @@ open class RecordingController: NSObject {
                 return
             }
             
-         
             if result.isFinal {
                self.recordingDelegate?.textFromAudio(result.bestTranscription.formattedString)
             }
