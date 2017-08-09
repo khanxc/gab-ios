@@ -16,7 +16,7 @@ import Foundation
 */
 
 
-struct Recording {
+struct Recording: Codable {
     
     let title: String
     let subtitle: String?

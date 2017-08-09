@@ -7,11 +7,16 @@
 //
 
 import Foundation
-
+import UIKit
 
 
 
 public struct Global {
     
+    
+}
 
+public struct Service {
+    
+   static let url = URL(string: "https://www.google.com")
 }
