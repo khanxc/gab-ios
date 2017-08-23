@@ -12,6 +12,7 @@ import Speech
 
 
 
+
 @objc public protocol RecordingDelegate {
     
      func  textFromAudio(_ text: String)
@@ -27,26 +28,34 @@ import Speech
 }
 
 
-/* Code to transcribe already recorded audio file with current locale support */
+/*
+ 
+ * Code to transcribe already recorded audio file with current locale support
+ 
+*/
 
 open class RecordingController: NSObject {
     
     
-    public var recordingDelegate: RecordingDelegate?
+    private weak var recordingDelegate: RecordingDelegate?
     
     
-    open func transcribeAudio(url: URL, locale: Locale?) {
+    open func transcribeAudio(url: URL, locale: Locale?) throws {
      
         
         let locale = locale ?? Locale.current
         
         guard let recognizer = SFSpeechRecognizer(locale: locale) else {
-            print("Speech recognition not available for specified locale")
+            
+            recordingDelegate?.locale_error!(RecordingError.invalidLocale.description)
+            
             return
         }
         
         if !recognizer.isAvailable {
-            print("Speech recognition not currently available")
+            
+            recordingDelegate?.unavailable_error!(RecordingError.recordingUnavailable.description)
+            
             return
         }
         
@@ -63,13 +72,15 @@ open class RecordingController: NSObject {
             
             guard let result = result else {
                 
-                print("There was an error transcribing the file")
+                self.recordingDelegate?.transcribe_error!(RecordingError.transcribeError.description)
                 
                 return
             }
             
             if result.isFinal {
+                
                self.recordingDelegate?.textFromAudio(result.bestTranscription.formattedString)
+                
             }
             
         }
@@ -82,3 +93,31 @@ extension RecordingController {
     
 }
 
+
+/*
+ 
+ * Error handling enum for Recording Controller
+ 
+*/
+
+
+private enum RecordingError: Error {
+    
+    case invalidLocale
+    case recordingUnavailable
+    case transcribeError
+}
+
+extension RecordingError: CustomStringConvertible {
+    
+    public var description: String {
+        
+        switch self {
+            
+        case .invalidLocale: return "The current locale is invalid"
+        case .recordingUnavailable: return "Speech recognition not currently available"
+        case .transcribeError: return "There was an error transcribing the file"
+            
+        }
+    }
+}

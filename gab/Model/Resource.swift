@@ -8,7 +8,13 @@
 
 import Foundation
 
-//Generic result type from server
+/*
+ 
+ * Generic result type from server
+ * A resource can take any date model as input
+ * And deserialize json into respective data model
+ 
+*/
 
 
 protocol GenericDecoding {
@@ -34,9 +40,4 @@ extension Resource : GenericDecoding {
 }
 
 
-//let RecordingResource = Resource<A>(url: Service.URL!) { data in
-//
-//    let decoded = try? JSONDecoder().decode(Any, from: data)
-//    return decoded
-//}
 

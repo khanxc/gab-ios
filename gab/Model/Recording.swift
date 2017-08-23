@@ -11,7 +11,8 @@ import Foundation
 
 /* 
  
- This structure is for the already recorded audio. Can be fetched from the user's music album, or he could record and audio, store it .
+ * This structure is for the already recorded audio.
+ * Can be fetched from the user's music album, or he could record and audio, store it .
  
 */
 

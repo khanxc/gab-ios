@@ -19,19 +19,19 @@ import AVFoundation
 
 /* This class helps in live transcribe in real time */
 
-class LiveTranscribeController: NSObject {
+open class LiveTranscribeController: NSObject {
     
-    let audioEngine = AVAudioEngine()
+    private let audioEngine = AVAudioEngine()
     
-    let speechRecognizer = SFSpeechRecognizer()
+    private let speechRecognizer = SFSpeechRecognizer()
     
-    let request = SFSpeechAudioBufferRecognitionRequest()
+    private let request = SFSpeechAudioBufferRecognitionRequest()
     
-    var recognitionTask: SFSpeechRecognitionTask?
+    private var recognitionTask: SFSpeechRecognitionTask?
     
-    var mostRecentlyProcessedSegmentDuration: TimeInterval = 0
+    private var mostRecentlyProcessedSegmentDuration: TimeInterval = 0
     
-    var liveDelegate: LiveDelegate?
+    private weak var liveDelegate: LiveDelegate?
     
     
     private func startLiveTranscribe() throws {
@@ -106,3 +106,8 @@ extension LiveTranscribeController {
         self.authentication()
     }
 }
+
+
+
+
+
